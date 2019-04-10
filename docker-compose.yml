@@ -26,11 +26,6 @@ services:
     build: ./bin/mysql
     container_name: "${APP_NAME}_mysql"
     restart: always
-    environment:
-      MYSQL_USER: ${MYSQL_USER}
-      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-      MYSQL_DATABASE: ${MYSQL_DATABASE}
-      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     networks:
       - backend
     ports:
