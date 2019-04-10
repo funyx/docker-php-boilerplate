@@ -27,10 +27,10 @@ services:
     container_name: "${APP_NAME}_mysql"
     restart: always
     environment:
-      MYSQL_USER: restapi
-      MYSQL_PASSWORD: restapi
-      MYSQL_DATABASE: restapi
-      MYSQL_ROOT_PASSWORD: restapi
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
     networks:
       - backend
     ports:
