@@ -16,6 +16,8 @@ services:
   php:
     build: ./bin/php
     container_name: "${APP_NAME}_php"
+    args:
+      USE_XDEBUG: "${USE_XDEBUG}"
     restart: always
     networks:
       - backend
