@@ -19,11 +19,11 @@ RUN apk add --no-cache $PHPIZE_DEPS \
     && pecl install mcrypt-1.0.2 \
     && docker-php-ext-enable mcrypt
 
-# install xdebug if needed
-RUN if [ "${USE_XDEBUG}" = "true" ]; then \
+RUN if [ "${USE_XDEBUG}" == "true" ]; \
+    then \
         pecl install xdebug-2.7.1 \
-        && docker-php-ext-enable xdebug \
-    fi
+        && docker-php-ext-enable xdebug; \
+    fi;
 
 # add the xdebug ini config (used only if xdebug is enabled)
 ADD docker-php-ext-xdebug-config.ini /usr/local/etc/php/conf.d/docker-php-ext-xdebug-config.ini

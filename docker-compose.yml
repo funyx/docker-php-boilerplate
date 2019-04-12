@@ -14,10 +14,12 @@ services:
     volumes:
       - ./www/:/app
   php:
-    build: ./bin/php
+    build:
+      context: ./bin/php
+      dockerfile: Dockerfile
+      args:
+        USE_XDEBUG: "${USE_XDEBUG}"
     container_name: "${APP_NAME}_php"
-    args:
-      USE_XDEBUG: "${USE_XDEBUG}"
     restart: always
     networks:
       - backend
